@@ -11,7 +11,7 @@ function initShoppingList() {
 }
 
 function handleItemForm(event, formRef){
-    if(event.preventDefault) {
+    if (event.preventDefault) {
         event.preventDefault();
     }
 
@@ -26,7 +26,6 @@ function addItemToShoppingList() {
     let itemAmount = document.getElementById("item-amount");
     let id = getRandomInt(0,10000000);
 
-    // Creates list item html and appends to page
     let itemHtml = createListItemHtml(itemName.value, itemAmount.value);
     let itemListRef = document.getElementById("shopping-list");
     itemListRef.insertAdjacentElement("after-end", itemHtml);
@@ -45,8 +44,7 @@ function createListItemHtml(itemName, itemAmount, id) {
     return `<li id="item${id}">
                 ${itemName} - ${itemAmount}
                 <button id="button${id}" type=button>Delete Item</button>
-            </li>;`
-
+            </li>`;
 }
 
 function removeListItem(id) {
